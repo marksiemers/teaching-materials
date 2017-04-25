@@ -23,7 +23,7 @@
 					<h1 class="center">More jQuery</h1>
 					<div class="content">
 						<p align="center">
-						Slides: <a href="http://www.teaching-materials.org/jquery2/">http://www.teaching-materials.org/jquery2/</a>
+						Slides: <a href="https://dbc-gdi.netlify.com/jquery2/">https://dbc-gdi.netlify.com/jquery2/</a>
 						</p>
 					</div>
         </section><!--/jquery title slide-->
@@ -37,16 +37,16 @@ var sayHello = function (name) {
   console.log("Hello, " + name + "!");
 }
 
-//call a function 
+//call a function
 sayHello("Girl Develop It");
         		</code></pre>
         	</div>
         </section>
 
 
-        <section>
+        <section style="margin-top:-40px;">
 			<header><h2>Remember: Callbacks</h2></header>
-				<img src="img/ryan-gosling-callback.jpg" style="width:100%;"/>
+				<img src="img/ryan-gosling-callback.jpg" style="width:90%;"/>
 
 		</section><!--/hey girl meme-->
 
@@ -82,7 +82,7 @@ sayAwesome("Girl Develop It", function() {
         	</div>
         </section>
 
-        		<section>
+        		<section style="margin-top:-40px;">
 					<header><h2>Events</h2></header>
 					<div class="content">
 <pre><code class="javascript">// First Example, with named callback & .on
@@ -102,7 +102,7 @@ $('button').on('click', function () {
 // Third Example, with .click (& a named callback)
 $('button').click(onButtonClick)
 </code></pre>
-<small><ul>
+<small><ul style="width:120%">
 						<li><a href="http://api.jquery.com/category/events/keyboard-events/">Keyboard Events</a>
 							<code>'keydown'</code>
 							<code>'keypress'</code>
@@ -120,7 +120,6 @@ $('button').click(onButtonClick)
 							<code>'blur'</code>
 						</li>
         </ul></small>
-            <p>Follow along: <a href="http://jsbin.com/jiwoxef/edit">http://jsbin.com/jiwoxef/edit</a></p>
 					</div>
 				</section><!--/events1-->
 
@@ -138,7 +137,7 @@ $('a').on('click', function (event) {
 });</code></pre>
 <pre><code class="javascript">//default event is to submit form and reload page
 $('form').on('submit', function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
   console.log('Not submitting, time to validate!');
 });</code></pre>
 
@@ -191,24 +190,22 @@ $('button').mouseover(function(){
 				</section><!--/jquery plugins-->
 
 				<section>
-					<h2>jQuery Plugin Usage</h2>
+					<h2>jQuery UI Plugin</h2>
 						<ul>
-							<li>Download the plugin and associated files from the site or github repo.</li>
-							<li>Copy them into your project folder.</li>
-							<li>In the HTML, reference any associated CSS files.</li>
-<pre><code>&lt;link rel="type/stylesheet" type="text/css" href="tablesorter.css"&gt;</code></pre>
-							<li>In the HTML, add a &lt;script&gt; tag for the jQuery plugin itself.</li>
-<pre><code>&lt;script src="lib/tablesorter.js"&gt;&lt;script&gt;</code></pre>
-							<li>In the JavaScript, call the jQuery plugin on your DOM.</li>
-<pre><code>$('table').tableSorter();</code></pre>
-            </ul>
-<aside class="notes">shorter, cross-browser</aside>
+							<li>Just like jQuery, you have options for including it:
+								<ul>
+									<li>Download and include jQuery UI: <a href="https://jqueryui.com/download/">https://jqueryui.com/download/</a></li>
+									<li>Use the jQuery CDN: <a href="https://code.jquery.com/ui/">https://code.jquery.com/ui/</a></li>
+								</ul>
+							</li>
+							<li>We will see an example in our next exercise...</li>
+						</ul>
 				</section><!--/jquery plugin usage-->
 
 
 				<section>
-					<header><h2><a href="exercises/exercise_plugin.html">Exercise Time!</a></h2></header>
-            <p><a href="exercises/exercise_plugin.html">click here!</a></p>
+					<header><h2><a href="exercises/exercise_jquery_ui_tabs.html">Exercise Time!</a></h2></header>
+            <p><a href="exercises/exercise_jquery_ui_tabs.html">Using the jQuery UI Plugin</a></p>
         </section><!--/exercise3-->
 
 
@@ -222,7 +219,7 @@ $('button').mouseover(function(){
 						<!--<br>
 						<p><strong>Pattern: </strong>bind events to the document
 						<pre><code class="javascript">$(document).on('click', 'a', myCallback);</code></pre>
-						</p>--> 
+						</p>-->
 
 					</p>
 				</section><!--/jquery patterns and anti-patterns-->
@@ -319,12 +316,21 @@ banner.show();</code></pre>
 				</section><!--don't become a jquery dept-->
 
 				<section>
-					<header><h2>jQuery</h2></header>
+					<header>
+						<h1>Thank You for Coming!</h1>
+					</header>
 					<p>
 						<br>
 						<h3 style="text-align:center">
-							<a href="http://docs.jquery.com">docs.jquery.com</a>
+							Documentation
 						</h3>
+						<h4 style="text-align:center">
+							<a href="http://api.jquery.com">api.jquery.com</a>
+						</h4>
+						<br/>
+						<h4 style="text-align:center">
+							<a href="http://api.jqueryui.com/">api.jqueryui.com</a>
+						</h4>
 					</p>
 				</section><!--docs.jquery.com-->
 

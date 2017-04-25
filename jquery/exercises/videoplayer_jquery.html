@@ -2,23 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>jQuery: Exercise 3</title>
+    <title>jQuery Exercise</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="http://www.teaching-materials.org/common/bootstrap.css" rel="stylesheet">
+    <link href="https://dbc-gdi.netlify.com/common/bootstrap.css" rel="stylesheet">
   </head>
 
   <body>
     <div class="container">
-      <h2>jQuery: Exercise 3</h2>
+      <h2>jQuery Exercise</h2>
       <h3>Making a Video Player in jQuery</h3>
       <p>
-        In this exercise, you will use jQuery instead of the DOM API to create the same list of links you made in <a href="videoplayer_library.html">Exercise 1</a>.
+        In this exercise, you will use jQuery to create thumbnail video links for youtube videos.
       </p>
 
       <ol>
-        <li><p>Either start with your own solution from Exercise 1 or <a href="videoplayer_library_solution.html">download it</a>.</p>
+        <li><p>Start by downloading <a href="videoplayer_jquery_start.html">this file</a>.</p>
         <li>
         <p>
         First, download the jQuery library from <a href="http://jquery.com">jquery.com</a> and save it into the same directory as your exercise files. Then, add a <code>&lt;script&gt;</code> tag to the page which loads in the jQuery library you just downloaded. The script tag will look something like this:
@@ -28,7 +28,7 @@
       </p>
       <li>
       <p>
-        Next, replace the existing code with jQuery - any DOM manipulation can be done with jQuery instead. If you're not sure how to do something with jQuery, google for "X with jQuery" and you will likely find the jQuery docs or StackOverflow questions.
+        Next, follow the code comment prompts - any DOM manipulation can be done with jQuery. If you're not sure how to do something with jQuery, google for "X with jQuery" and you will likely find the jQuery docs or StackOverflow questions.
       </p>
       </li>
     </ol>
@@ -51,13 +51,13 @@
  &lt;body&gt;
 
 &lt;div class="container"&gt;
- 
+
  &lt;div class="row"&gt;
    &lt;div class="span12"&gt;
     &lt;h2 class="page-header">Best Videos Ever ❤&lt;/h1&gt;
    &lt;/div&gt;
  &lt;/div&gt;
- 
+
  &lt;div class="row"&gt;
    &lt;div class="span3"&gt;
      &lt;ul>
@@ -73,18 +73,35 @@
 
 &lt;/div&gt;
 
- &lt;script type="text/javascript" src="http://www.teaching-materials.org/common/youtube.js"&gt;&lt;/script&gt;
- &lt;script type="text/javascript" src="http://www.teaching-materials.org/common/jquery.js"&gt;&lt;/script&gt;
+ &lt;script type="text/javascript" src="https://dbc-gdi.netlify.com/common/youtube.js"&gt;&lt;/script&gt;
+ &lt;script type="text/javascript" src="https://dbc-gdi.netlify.com/common/jquery.js"&gt;&lt;/script&gt;
  &lt;script&gt;
-   var videoLinks = $('a');
-   for(var i = 0; i < videoLinks.length; i++) {
-      var videoLink = $(videoLinks[i]);
-      var linkUrl = videoLink.attr('href');
-      var thumbnailUrl = youtube.generateThumbnailUrl(linkUrl);
-      var thumbnailImg = $('&lt;img&gt;');
-      thumbnailImg.attr('src', thumbnailUrl);
-      videoLink.append(thumbnailImg);
-    });
+  var addVideoThumbnail = function($videoLink) {
+    // What jQuery method can we use to get the linkUrl?
+    var linkUrl = $videoLink.attr('href'); /* YOUR CODE GOES HERE */
+
+    // We need a thumbnail URL from youtube, how do we get it?
+    // See https://dbc-gdi.netlify.com/jquery2/youtube_doc.html
+    var thumbnailUrl = youtube.generateThumbnailUrl(linkUrl);/* YOUR CODE GOES HERE */
+
+    // We need a new image element, with the src set to the thumbnailUrl
+    // How can we do this using jQuery?
+    /* YOUR CODE GOES HERE */
+    var $thumbnailImg = $('&lt;img&gt;')
+    $thumbnailImg.attr('src', thumbnailUrl);
+
+    // We need to append the thumbnail to the video link.
+    // How do we use jQuery to do that?
+    $videoLink.append($thumbnailImg);/* YOUR CODE GOES HERE */
+  };
+
+  var $videoLinks = $('a');
+
+  // How do we add a thumbnail to all the videos within this for loop?
+  for (var i = 0; i < $videoLinks.length; i++) {
+    var $videoLink = $($videoLinks[i]);
+    addVideoThumbnail($videoLink);
+  }
  &lt;/script&gt;
  &lt;/body&gt;
 &lt;/html&gt;</pre>

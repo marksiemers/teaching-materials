@@ -30,13 +30,34 @@
  <button  onclick="showSolution(1)" class="btn">See Solution</button>
  <br><br>
 <pre id="solution1" style="display:none;">
+// Every image on the page
 $("img");
+
+// The navigation area in the upper right
 $(".nav");
+
+// The MailChimp sign-up form in the bottom
 $("#mc_embed_signup");
+
+// The upper left-hand logo that says GDI
 $(".logo img");
+// Or, even better
+$(".logo").find('img');
+
+// The logos of the media sources that featured Girl Develop It
 $(".press-logos img");
+// Or, even better
+$(".press-logos').find("img");
+
+// The big heading that says "DON'T BE SHY DEVELOP IT"
 $(".opener h1");
+// Or, even better
+$(".opener").find("h1");
+
+// BONUS: all the dots in the map
 $("circle");
+// Or, even better
+$('.map').find('circle');
 </pre>
 
   <br><br><br><br><br>
